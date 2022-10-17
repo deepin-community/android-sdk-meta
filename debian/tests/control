@@ -1,0 +1,12 @@
+Tests: check-syntax
+
+Tests: test-deb-revision-parsing
+
+Test-Command: test -e /lib/udev/rules.d/51-android.rules
+Depends: adb
+
+Test-Command: test -e /lib/udev/rules.d/51-android.rules
+Depends: android-tools-adb
+
+Test-Command: test -e /lib/udev/rules.d/51-android.rules
+Depends: android-sdk-platform-tools-common

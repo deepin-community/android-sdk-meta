@@ -1,0 +1,23 @@
+#!/bin/sh -e
+#
+# all lines in the file should be one of:
+# - a comment
+# - blank
+# - a udev rule matching a vendor/product pair
+# - a udev rule matching a vendor
+# - four specific static udev lines
+#
+# If there is no output from the final grep, it will exit with a value
+# of 1, since there is no output.  But for this test, that is what we
+# want.  Any output to stderr should count as a failed run.
+
+grep -v '^#' 51-android.rules \
+    | grep -Ev '^$' \
+    | grep -Ev '^SUBSYSTEM=="usb", ATTR{idVendor}=="[0-9a-f]{4}", ATTR{idProduct}=="[0-9a-f]{4}", ENV{adb_user}="yes"$' \
+    | grep -Ev '^SUBSYSTEM=="usb", ATTR{idVendor}=="[0-9a-f]{4}", ENV{adb_user}="yes"$' \
+    | grep -Ev '^SUBSYSTEM!="usb", GOTO="android_usb_rules_end"$' \
+    | grep -Ev '^LABEL="android_usb_rules_begin"$' \
+    | grep -Ev '^ENV{adb_user}=="yes", MODE="0660", GROUP="plugdev", TAG\+="uaccess"$' \
+    | grep -Ev '^LABEL="android_usb_rules_end"$' || exit 0
+
+exit 1

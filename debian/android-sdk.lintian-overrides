@@ -1,0 +1,16 @@
+
+# This is a meta package that sets things up like the upstream binary
+# packages.  This is done using symlinks for things that Debian
+# already provides.
+
+breakout-link usr/lib/android-sdk/tools/bin/e2fsck -> sbin/e2fsck
+breakout-link usr/lib/android-sdk/tools/bin/fsck.ext4 -> sbin/fsck.ext4
+breakout-link usr/lib/android-sdk/tools/bin/mkfs.ext4 -> sbin/mkfs.ext4
+breakout-link usr/lib/android-sdk/tools/bin/resize2fs -> sbin/resize2fs
+breakout-link usr/lib/android-sdk/tools/bin/screenshot2 -> usr/bin/screenshot2
+breakout-link usr/lib/android-sdk/tools/bin/tune2fs -> sbin/tune2fs
+breakout-link usr/lib/android-sdk/tools/proguard/bin/proguard -> usr/bin/proguard
+breakout-link usr/lib/android-sdk/tools/proguard/bin/proguardgui -> usr/bin/proguardgui
+breakout-link usr/lib/android-sdk/tools/proguard/lib/proguard.jar -> usr/share/java/proguard.jar
+breakout-link usr/lib/android-sdk/tools/proguard/lib/proguardgui.jar -> usr/share/java/proguardgui.jar
+breakout-link usr/lib/android-sdk/tools/proguard/lib/retrace.jar -> usr/share/java/retrace.jar

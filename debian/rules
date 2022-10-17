@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/pkg-info.mk
+
+export BUILD_TOOLS_VERSION = 29.0.3
+PLATFORM_TOOLS_VERSION = 28.0.2
+# this needs to also support updates and ubuntu versions, e.g.:
+# - 25.0.0+11+deb10u1
+# - 25.0.0+10~18.04.2
+DEB_REVISION = $(shell echo $(DEB_VERSION) | sed -E 's,.+\+([0-9]+([~+][a-z0-9.]+)?),\1,')
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	printf 'Pkg.UserSrc=false\nPkg.Revision=$(BUILD_TOOLS_VERSION)\nDebian=true\n' \
+		> build-tools/source.properties
+	printf 'Pkg.UserSrc=false\nPkg.Revision=$(PLATFORM_TOOLS_VERSION)\nDebian=true\n' \
+		> platform-tools/source.properties
+
+override_dh_gencontrol:
+	dh_gencontrol
+	dh_gencontrol -pandroid-sdk-platform-tools -- -v$(PLATFORM_TOOLS_VERSION)+$(DEB_REVISION)
+	dh_gencontrol -pandroid-sdk-platform-tools-common -- -v$(PLATFORM_TOOLS_VERSION)+$(DEB_REVISION)
+	dh_gencontrol -pandroid-sdk-build-tools -- -v$(BUILD_TOOLS_VERSION)+$(DEB_REVISION)
+	dh_gencontrol -pandroid-sdk-build-tools-common -- -v$(BUILD_TOOLS_VERSION)+$(DEB_REVISION)
+
+test_parsing_DEB_REVISION:
+	test "$(expected_DEB_REVISION)" = "$(DEB_REVISION)"

@@ -1,0 +1,2 @@
+licenses  usr/lib/android-sdk
+tools/*   usr/lib/android-sdk/tools
