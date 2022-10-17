@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+all:
+	echo $(DEB_REVISION)
+	debian/rules test_parsing_DEB_REVISION \
+		expected_DEB_REVISION=11+deb10u1 \
+		DEB_VERSION=25.0.0+11+deb10u1 \
+
+	debian/rules test_parsing_DEB_REVISION \
+		expected_DEB_REVISION=10~18.04.2 \
+		DEB_VERSION=25.0.0+10~18.04.2
+
+	debian/rules test_parsing_DEB_REVISION \
+		expected_DEB_REVISION=13 \
+		DEB_VERSION=25.0.0+13
+	@echo SUCCESS

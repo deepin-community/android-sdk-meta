@@ -1,0 +1,10 @@
+
+# This is a meta package that sets things up like the upstream binary
+# packages.  This is done using symlinks for things that Debian
+# already provides.
+
+breakout-link usr/lib/android-sdk/platform-tools/make_f2fs -> sbin/mkfs.f2fs
+breakout-link usr/lib/android-sdk/platform-tools/mke2fs -> sbin/mke2fs
+breakout-link usr/lib/android-sdk/platform-tools/mke2fs.conf -> etc/mke2fs.conf
+breakout-link usr/lib/android-sdk/platform-tools/sload_f2fs -> sbin/sload.f2fs
+breakout-link usr/lib/android-sdk/platform-tools/sqlite3 -> usr/bin/sqlite3

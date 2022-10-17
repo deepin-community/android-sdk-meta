@@ -1,0 +1,11 @@
+sbin/e2fsck                                  usr/lib/android-sdk/tools/bin/e2fsck
+sbin/fsck.ext4                               usr/lib/android-sdk/tools/bin/fsck.ext4
+sbin/mkfs.ext4                               usr/lib/android-sdk/tools/bin/mkfs.ext4
+sbin/resize2fs                               usr/lib/android-sdk/tools/bin/resize2fs
+sbin/tune2fs                                 usr/lib/android-sdk/tools/bin/tune2fs
+usr/bin/screenshot2                          usr/lib/android-sdk/tools/bin/screenshot2
+usr/bin/proguard                             usr/lib/android-sdk/tools/proguard/bin/proguard
+usr/bin/proguardgui                          usr/lib/android-sdk/tools/proguard/bin/proguardgui
+usr/share/java/proguard.jar                  usr/lib/android-sdk/tools/proguard/lib/proguard.jar
+usr/share/java/proguardgui.jar               usr/lib/android-sdk/tools/proguard/lib/proguardgui.jar
+usr/share/java/retrace.jar                   usr/lib/android-sdk/tools/proguard/lib/retrace.jar

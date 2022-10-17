@@ -1,0 +1,5 @@
+etc/mke2fs.conf   usr/lib/android-sdk/platform-tools/mke2fs.conf
+sbin/mke2fs       usr/lib/android-sdk/platform-tools/mke2fs
+sbin/mkfs.f2fs    usr/lib/android-sdk/platform-tools/make_f2fs
+sbin/sload.f2fs   usr/lib/android-sdk/platform-tools/sload_f2fs
+usr/bin/sqlite3   usr/lib/android-sdk/platform-tools/sqlite3

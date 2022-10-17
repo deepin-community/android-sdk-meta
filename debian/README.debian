@@ -1,0 +1,9 @@
+Versioning Scheme
+=================
+
+The versions of the SDK, the Build-tools and the Platform-tools are independent
+from each other, and we track the versions in the following places:
+
+  * SDK: https://android.googlesource.com/platform/tools/buildSrc/+/gradle_${latest}/base/version.gradle
+  * Build-tools: https://android.googlesource.com/platform/development/+/android-${latest}/sdk/build_tools_source.prop_template
+  * Platform-tools: https://android.googlesource.com/platform/development/+/android-${latest}/sdk/plat_tools_source.prop_template
