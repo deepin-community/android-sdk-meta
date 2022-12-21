@@ -1,3 +1,10 @@
+android-sdk-meta (28.0.2+4) unstable; urgency=medium
+
+  [ Hans-Christoph Steiner ]
+  * UNRELEASED
+
+ -- Deepin Packages Builder <packages@deepin.org>  Wed, 21 Dec 2022 18:45:50 +0800
+
 android-sdk-meta (28.0.2+3) unstable; urgency=medium
 
   * Team upload.
